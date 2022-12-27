@@ -3,6 +3,7 @@ package net.acmicpc.problem;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+// 가로 문자열 
 public class Main9012 {
 
 	public static void main(String[] args) throws Exception {
