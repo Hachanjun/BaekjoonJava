@@ -21,8 +21,8 @@ public class Main2609 {
 		sb.append(GCD).append('\n');
 		
 		// 최소공배수
-		int LCD = (A * B) / GCD;
-		sb.append(LCD);
+		int LCM = (A * B) / GCD;
+		sb.append(LCM);
 		
 		System.out.println(sb);
 	}
