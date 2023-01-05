@@ -27,4 +27,43 @@ public class Main1463 {
 		}
 		System.out.println(memo[X]);
 	}
+	
+//	public static void main(String[] args) throws Exception {
+//		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		d = new int[N + 1];
+//		
+//		System.out.println(go(N));
+//	}
+//	
+//	public static int go(int n) {
+//		
+//		if ( n == 1 ) {
+//			return 0;
+//		}
+//		
+//		if ( d[n] > 0 ) {
+//			return d[n];
+//		}
+//		
+//		d[n] = go(n - 1) + 1;
+//		if ( n % 2 == 0 ) {
+//			int temp = go(n / 2) + 1;
+//			
+//			if ( d[n] > temp ) {
+//				d[n] = temp;
+//			}
+//		}
+//		
+//		if ( n % 3 == 0 ) {
+//			int temp = go(n / 3) + 1;
+//			
+//			if ( d[n] > temp ) {
+//				d[n] = temp;
+//			}
+//		}
+//		return d[n];
+//	}
 }
