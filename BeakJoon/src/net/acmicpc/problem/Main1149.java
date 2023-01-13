@@ -17,13 +17,13 @@ public class Main1149 {
 		int N = Integer.parseInt(br.readLine());
 		
 		// 0 = red, 1 = green, 2 = blue
-		// 최솟값이 저장될 배열 
+		// 최솟값이 저장될 배열 메모리제이션
 		int[][] dp = new int[N + 1][3];
 		
 		// 비용이 저장될 배열 
 		int[][] cost = new int[N + 1][3];
 		
-		// 공백으로 i번 집을 입력받는다.
+		// 공백으로 구분해 i번 집을 입력받는다. j(색상)는 0, 1, 2
 		StringTokenizer st;
 		for ( int i = 1; i <= N; i++ ) {
 			st  = new StringTokenizer(br.readLine(), " ");
