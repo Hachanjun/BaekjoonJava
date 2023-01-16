@@ -17,9 +17,10 @@ public class Main1932 {
 		int N = Integer.parseInt(br.readLine());
 		
 		// 삼각형의 숫자가 담길 배열
+		// 2차원 배열 (i,j) = i행, j열 = i행의 j번째 
 		int[][] arr = new int[N][N];
 		
-		// 최댓값이 담길 배열
+		// 최댓값이 담길 배열 (i행 j열이 선택되었을 때 최대 합 (1,1) ~ (i,j) 
 		int[][] dp = new int[N][N];
 		
 		for ( int i = 0; i < N; i++ ) {
@@ -38,8 +39,6 @@ public class Main1932 {
 		for ( int i = 1; i < N; i++ ) {
 			for ( int j = 0; j<=i; j++ ) {
 				dp[i][j] = dp[i - 1][j] + arr[i][j];
-				
-				System.out.println("i = " + i + " j = " + j + "===========" + dp[i][j]);
 				
 				if ( j - 1 >= 0 && dp[i][j] < dp[i - 1][j - 1] + arr[i][j] ) {
 					dp[i][j] = dp[i - 1][j - 1] + arr[i][j];
