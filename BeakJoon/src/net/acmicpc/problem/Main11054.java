@@ -5,6 +5,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 // 가장 긴 바이토닉 부분수열
+/*
+ * 바이토닉 부분수열 : 한 번은 증가하다가 어떤 점을 기준으로 감소하는 부분 수열
+ * 증가, 감소 따로 구한 후 합쳐줘야한다.
+ */
 public class Main11054 {
 
 	public static void main(String[] args) throws Exception {
@@ -64,6 +68,7 @@ public class Main11054 {
 		}
 		
 		int ans = 0;
+		// 1을 빼는 이유는 k의 수는 양쪽에 다 포함되어 있기 때문에(즉 같은 수가 2번 들어갔기 때문이다)
 		for ( int i = 0; i < N; i++ ) {
 			if ( ans < lis[i] + lds[i] - 1 ) {
 				ans = lis[i] + lds[i] - 1;
