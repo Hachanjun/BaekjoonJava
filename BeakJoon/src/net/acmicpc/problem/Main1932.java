@@ -1,6 +1,5 @@
 package net.acmicpc.problem;
 
-import java.awt.datatransfer.StringSelection;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
