@@ -46,21 +46,25 @@ public class Main1107 {
 			broken[err[i]] = true;
 		}
 		
+		// 숫자 버튼을 누르지 않는 경우는 모든 경우에 다 가능하다. 그래서 정답의 초깃값으로 처리 
 		int ans = N - 100;
 		if ( ans < 0 ) {
-			ans -= ans;
+			ans = -ans;
 		}
 		
-		// 이동할 채널을 정한다. ( 0 ~ 500000 까지 다 이동을 해본다. )
-		for ( int i = 0; i <= 500000; i++ ) { 
+		// 이동할 채널을 정한다. ( 0 ~ 1000000 까지 다 이동을 해본다. )
+		for ( int i = 0; i <= 1000000; i++ ) { 
 			// 이동을 한다는 것은 숫자 버튼만 이용해서 이동할 채널이 ch이고, ch를 결정
 			int ch = i;
 			int len = possible(ch);
 			
+			// 불가능하면 0을 리턴하기 때문에 0이 아니면 
 			if ( len > 0 ) {
+				// +를 몇 번 눌러야 하는지 계산 
 				int press = ch - N;
 				if ( press < 0 ) {
-					press -= press;
+					// - 를 몇 번 눌러야 하는지 계산 
+					press = -press;
 				}
 				
 				if ( ans > len + press ) {
@@ -70,32 +74,10 @@ public class Main1107 {
 		}
 		
 		System.out.println(ans);
-		
-		/*
-		 * 이 채널(ch)를 이동할 수 있는지를 검사해야 한다.
-		 * 수를 10으로 계속해서 나누면서 하나씩 검사하는 방법 
-		 */
-		
-		// 버튼이 고장나 있으며 true, 아니면 false
-		/*
-		 * c에 포함되어 있는 숫자 중에 고장난 버튼이 있는지 확인한다.
-		 * while ( c > 0 ) {
-		 * 		// broken이 true가 된다면 고장난 버튼이 있으니 이동하지 못 한다는 의미의 false
-		 * 		if ( broken [c % 10] return false;
-		 * 		c /= 10;
-		 * }
-		 * 
-		 *	// 그게 아니면
-		 * return true;
-		 * 
-		 * 반례가 있다. 모든 경우의 답을 구할 수 없다. ( 0일 경우 )
-		 * if ( c == 0 ) {
-		 * 		
-		 * }
-		 */
 	}
 	
 	public static int possible(int ch) {
+		
 		if ( ch == 0 ) {
 			if ( broken[0] ) {
 				return 0;
@@ -105,6 +87,10 @@ public class Main1107 {
 		}
 		
 		int len = 0;
+		/*
+		 * 이 채널(ch)를 이동할 수 있는지를 검사해야 한다.
+		 * 수를 10으로 계속해서 나누면서 하나씩 검사하는 방법 
+		 */
 		while ( ch > 0 ) {
 			if ( broken[ ch % 10 ] ) {
 				return 0;
