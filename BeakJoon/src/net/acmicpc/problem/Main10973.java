@@ -47,24 +47,24 @@ public class Main10973 {
 			return false;
 		}
 		
-		int prev = permutation.length - 1;
-		while ( permutation[prev] >= permutation[standard - 1] ) {
-			prev -= 1;
+		int next = permutation.length - 1;
+		while ( permutation[next] >= permutation[standard - 1] ) {
+			next -= 1;
 		}
 		
 		int temp = permutation[standard - 1];
-		permutation[standard - 1] = permutation[prev];
-		permutation[prev] = temp;
+		permutation[standard - 1] = permutation[next];
+		permutation[next] = temp;
 		
-		prev = permutation.length - 1;
+		next = permutation.length - 1;
 		
-		while ( standard < prev ) {
+		while ( standard < next ) {
 			temp = permutation[standard];
-			permutation[standard] = permutation[prev];
-			permutation[prev] = temp;
+			permutation[standard] = permutation[next];
+			permutation[next] = temp;
 			
 			standard += 1;
-			prev -= 1;
+			next -= 1;
 		}
 		
 		return true;

@@ -1,4 +1,4 @@
-package net.acmicpc.problem;
+ package net.acmicpc.problem;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,6 +10,8 @@ import java.util.StringTokenizer;
  * 수 N개가 주어졌을 때, 식의 결과를 최대로 하는 결과 
  * 제한이 8밖에 안 되며, 수의 순서만 변경할 수 있다.
  * 제한이 8이기 때문에 8 * 8! = 32만 -> 모든 경우를 다 해봐도 된다.
+ * 
+ * 순서를 다 만들고 식의 값을 문제에 나와있는대로 계산
  */
 public class Main10819 {
 
@@ -60,23 +62,23 @@ public class Main10819 {
 			return false;
 		}
 		
-		int prev = permutation.length - 1;
-		while ( permutation[prev] <= permutation[standard - 1] ) {
-			prev -= 1;
+		int next = permutation.length - 1;
+		while ( permutation[next] <= permutation[standard - 1] ) {
+			next -= 1;
 		}
 		
 		int temp = permutation[standard - 1];
-		permutation[standard - 1] = permutation[prev];
-		permutation[prev] = temp;
+		permutation[standard - 1] = permutation[next];
+		permutation[next] = temp;
 		
-		prev = permutation.length - 1;
-		while ( standard < prev ) {
+		next = permutation.length - 1;
+		while ( standard < next ) {
 			temp = permutation[standard];
-			permutation[standard] = permutation[prev];
-			permutation[prev] = temp;
+			permutation[standard] = permutation[next];
+			permutation[next] = temp;
 			
 			standard += 1;
-			prev -= 1;
+			next -= 1;
 		}
 		return true;
 	}
