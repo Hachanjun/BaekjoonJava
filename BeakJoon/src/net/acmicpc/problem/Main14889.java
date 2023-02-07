@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
  * 정답을 찾은 경우
  * index == n
  * 
- * 불가능한 경우
+ * 불가능한 경우 -> 이 문제에서는 사용x
  * first의 크기 > n/2
  * second의 크기 > n/2
  * 
